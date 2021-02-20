@@ -62,6 +62,10 @@ proc createHistgram*(imageData: seq[uint8], imageWIdth: int, imageHeight: int): 
     # キー順にソートをかける
     his.sort(system.cmp)
 
-    echo his
-
     return his
+
+
+proc calcSimilarityScore*(histgram1: OrderedTable[int, int], histgram2: OrderedTable[int, int]): int =
+    for i in 0..63:
+        result = result + min(histgram1[i], histgram2[i])
+
