@@ -8,7 +8,6 @@ import math
 import algorithm
 import stb_image/read as stbi
 import stb_image/write as stbiw
-import colors
 
 type ImageData = ref object
     width*: int
@@ -20,7 +19,7 @@ proc loadImage*(path: string): ImageData =
     var w, h , c: int
 
     # 画像の読み込み
-    let data = stbi.load("test.jpg", w, h, c, stbi.Default)
+    let data = stbi.load(path, w, h, c, stbi.Default)
 
     # 構造体に追加し、返す
     result = new ImageData
@@ -61,6 +60,8 @@ proc createHistgram*(imageData: seq[uint8], imageWIdth: int, imageHeight: int): 
 
     # キー順にソートをかける
     his.sort(system.cmp)
+
+    echo his
 
     return his
 
