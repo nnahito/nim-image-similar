@@ -61,8 +61,6 @@ proc createHistgram*(imageData: seq[uint8], imageWIdth: int, imageHeight: int): 
     # キー順にソートをかける
     his.sort(system.cmp)
 
-    echo his
-
     return his
 
 
