@@ -7,6 +7,7 @@ license       = "MIT"
 srcDir        = "src"
 bin           = @["nim_image_similar"]
 binDir        = "bin"
+installExt    = @["nim"]
 
 
 # Dependencies
